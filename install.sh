@@ -55,8 +55,8 @@ for ((i=1; i<=NODE_COUNT; i++)); do
 "
 done
 
-# Cài đặt XrayR (tải script cài đặt từ dự án chính thức)
-bash <(curl -Ls https://raw.githubusercontent.com/XrayR-project/XrayR-release/master/install.sh)
+# Cài đặt XrayR (sử dụng phiên bản Việt hoá)
+bash <(curl -Ls https://raw.githubusercontent.com/DauDau432/XrayR-release/main/install.sh)
 
 # Tạo file cấu hình cho XrayR
 cat > /etc/XrayR/config.yml <<EOF
@@ -71,4 +71,7 @@ EOF
 # Khởi động lại XrayR để áp dụng cấu hình mới
 XrayR restart
 
-echo "✅ XrayR đã được cài đặt thành công!"
+# Kích hoạt dịch vụ XrayR để tự khởi động cùng hệ thống
+systemctl enable XrayR
+
+echo "✅ XrayR đã được cài đặt và cấu hình tự khởi động thành công!"
