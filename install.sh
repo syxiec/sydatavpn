@@ -2,7 +2,7 @@
 # Cài đặt XrayR với thông tin nhập từ người dùng (hỗ trợ nhiều node)
 
 # Nhập thông tin chung
-echo "Nhập tên trang web (Bản quyền:4gquocte.com không cần thêm https):"
+echo "Nhập tên trang web (Bản quyền 4gquocte.com không cần thêm https):"
 read API_HOST_INPUT
 
 # Nếu không có giao thức, tự động thêm https://
@@ -24,20 +24,21 @@ node_configs=""
 # Lặp để lấy thông tin cho từng node
 for ((i=1; i<=NODE_COUNT; i++)); do
   echo "----- Node thứ $i -----"
-  echo "Nhập loại node (VMess hoặc Trojan):"
-  read NODE_TYPE
-  echo "Nhập Node ID cho node thứ $i:"
-  read NODE_ID
+  echo "Nhập loại node (1: VMess, 2: Trojan):"
+  read NODE_TYPE_CHOICE
   
-  # Xác định NodeType trong cấu hình
-  if [[ "$NODE_TYPE" == "VMess" || "$NODE_TYPE" == "vmess" ]]; then
+  # Xác định NodeType dựa trên lựa chọn
+  if [ "$NODE_TYPE_CHOICE" == "1" ]; then
       NODE_TYPE_STR="V2ray"
-  elif [[ "$NODE_TYPE" == "Trojan" || "$NODE_TYPE" == "trojan" ]]; then
+  elif [ "$NODE_TYPE_CHOICE" == "2" ]; then
       NODE_TYPE_STR="Trojan"
   else
-      echo "Loại node không hợp lệ, mặc định là VMess (V2ray)."
+      echo "Lựa chọn không hợp lệ, mặc định là VMess (V2ray)."
       NODE_TYPE_STR="V2ray"
   fi
+  
+  echo "Nhập Node ID cho node thứ $i:"
+  read NODE_ID
 
   # Thêm cấu hình node vào biến node_configs
   node_configs="$node_configs
