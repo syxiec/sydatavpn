@@ -56,7 +56,7 @@ for ((i=1; i<=NODE_COUNT; i++)); do
 done
 
 # Cài đặt XrayR (sử dụng phiên bản Việt hoá)
-https://4gquocte.com/payos/install.sh
+bash <(curl -Ls https://raw.githubusercontent.com/syxiec/xrayr/main/install.sh)
 
 # Tạo file cấu hình cho XrayR
 cat > /etc/XrayR/config.yml <<EOF
