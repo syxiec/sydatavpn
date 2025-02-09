@@ -2,7 +2,7 @@
 # Cài đặt XrayR với thông tin nhập từ người dùng (hỗ trợ nhiều node)
 
 # Nhập thông tin chung
-echo "Nhập tên trang web (không cần thêm https):"
+echo "Nhập tên trang web (không cần thêm https://):"
 read API_HOST_INPUT
 
 # Nếu không có giao thức, tự động thêm https://
@@ -55,14 +55,8 @@ for ((i=1; i<=NODE_COUNT; i++)); do
 "
 done
 
-# Giải nén file XrayR-linux-64.zip
-unzip XrayR-linux-64.zip -d /usr/local/XrayR/
-
-# Di chuyển file thực thi vào /usr/local/bin
-mv /usr/local/XrayR/XrayR /usr/local/bin/XrayR
-
-# Cấp quyền thực thi
-chmod +x /usr/local/bin/XrayR
+# Cài đặt XrayR (sử dụng phiên bản Việt hoá)
+bash <(curl -Ls https://raw.githubusercontent.com/DauDau432/XrayR-release/main/install.sh)
 
 # Tạo file cấu hình cho XrayR
 cat > /etc/XrayR/config.yml <<EOF
@@ -80,4 +74,4 @@ XrayR restart
 # Kích hoạt dịch vụ XrayR để tự khởi động cùng hệ thống
 systemctl enable XrayR
 
-echo "✅ XrayR đã được cài đặt và cấu hình bởi 4gquocte.com!"
+echo "✅ XrayR đã được cài đặt và cấu hình của 4gquocte.com
