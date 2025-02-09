@@ -367,7 +367,7 @@ show_XrayR_version() {
 
 show_usage() {
     echo ''
-    echo "------------[Tài]------------"
+    echo "------------[Bản Quyền By 4G Quốc Tế.Com]------------"
     echo "  Cách sử dụng tập lệnh quản lý XrayR: "
     echo "------------------------------------------"
     echo "  XrayR              - Hiển thị menu quản trị (nhiều chức năng hơn) "
@@ -388,8 +388,8 @@ show_usage() {
 
 show_menu() {
     echo -e "
-    Các tập lệnh quản lý phụ trợ XrayR，không hoạt động với docker${plain}
-    ${green}--- [4G] ---${plain}
+    Các tập lệnh quản lý phụ trợ XrayR，nhóm zalo:https://zalo.me/g/apibgy791${plain}
+    ${green}--- [Bản Quyền By 4G Quốc Tế.Com] ---${plain}
     0. Thay đổi cài đặt
 ————————————————————————————————
     1. Cài đặt XrayR
